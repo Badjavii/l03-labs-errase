@@ -1,11 +1,11 @@
 package ve.edu.ucab;
 
-public class Libro extends MaterialBiblioteca{
+public class recursosDigitales extends materialBiblioteca {
 
     // Atributos Adicionales
-    private String autor;
-    private String editor;
-    private String isbn;
+    private String url;
+    private String formato;
+    private int tamano;
 
     // Implementacion de metodos abstractos
     @Override

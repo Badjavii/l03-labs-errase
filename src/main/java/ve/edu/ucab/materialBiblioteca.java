@@ -1,6 +1,6 @@
 package ve.edu.ucab;
 
-public abstract class MaterialBiblioteca {
+public abstract class materialBiblioteca {
     private Integer id;
     private int anho;
     private String titulo;
@@ -47,8 +47,6 @@ public abstract class MaterialBiblioteca {
         return "MaterialBiblioteca{" +
                 "id=" + id +
                 ", anho=" + anho +
-                ", titulo='" + titulo + '\'' +
-                ", disponible=" + disponible +
                 '}';
     }
 }

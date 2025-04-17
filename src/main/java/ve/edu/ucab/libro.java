@@ -1,12 +1,11 @@
 package ve.edu.ucab;
 
-public class Revista extends MaterialBiblioteca{
+public class libro extends materialBiblioteca {
 
     // Atributos Adicionales
-    private int volumen;
-    private int editor;
-    private String issn;
-
+    private String autor;
+    private String editor;
+    private String isbn;
 
     // Implementacion de metodos abstractos
     @Override
