@@ -5,7 +5,7 @@ public abstract class LibraryMaterial {
     private int id;
     private int year;
     private String title;
-    private boolean available;
+    private boolean reserved;
 
     // Definition of abstract method. In spanish its called "calcularTiempoPrestamo"
     public abstract void calculateLoanTime();
@@ -13,43 +13,41 @@ public abstract class LibraryMaterial {
     // Definition of abstract method. In spanish its called "generarCodigoCatalogo"
     public abstract void generateCatalogCode();
 
+    // Definition Setters
 
-    // Getter and setters definition for Id
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    // Getter and setters definition for Year
-    public int getYear() {
-        return year;
     }
 
     public void setYear(int year) {
         this.year = year;
     }
 
-    // Getter and setters definition for Title
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
+    }
+
+    // Definition Getters
+
+    public int getId() {
+        return id;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.titulo = titulo;
+    public boolean isReserved() {
+        return reserved;
     }
-
-    // Getter and setters definition for Available
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = disponible;
-    }
-
 
     @Override
     public String toString() {
@@ -58,4 +56,5 @@ public abstract class LibraryMaterial {
                 ", year=" + year +
                 '}';
     }
+
 }
