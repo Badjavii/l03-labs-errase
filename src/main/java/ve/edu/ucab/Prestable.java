@@ -1,5 +1,5 @@
 package ve.edu.ucab;
 
-public interface prestable {
+public interface Prestable {
 
 }

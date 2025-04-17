@@ -1,6 +1,6 @@
 package ve.edu.ucab;
 
-public abstract class materialBiblioteca {
+public abstract class MaterialBiblioteca {
     private Integer id;
     private int anho;
     private String titulo;

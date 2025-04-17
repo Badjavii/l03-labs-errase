@@ -1,6 +1,6 @@
 package ve.edu.ucab;
 
-public class recursosDigitales extends materialBiblioteca {
+public class RecursosDigitales extends MaterialBiblioteca {
 
     // Atributos Adicionales
     private String url;

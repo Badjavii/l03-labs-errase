@@ -1,6 +1,6 @@
 package ve.edu.ucab;
 
-public class libro extends materialBiblioteca {
+public class Libro extends MaterialBiblioteca {
 
     // Atributos Adicionales
     private String autor;

@@ -1,6 +1,6 @@
 package ve.edu.ucab;
 
-public class revista extends materialBiblioteca {
+public class Revista extends MaterialBiblioteca {
 
     // Atributos Adicionales
     private int volumen;

@@ -14,3 +14,12 @@ Develop a management system for a university library that must manage different 
 2. Management of users (students, faculty, and staff).
 3. Management of loans and returns.
 4. Searching for materials by different criteria.
+
+### Getting Started
+
+1. **Clone the repository:** To get a local copy of these exercises, clone this repository to your local machine using the following command in your terminal:
+```bash
+git clone https://github.com/UCAB-202425-POO/ucab-lab-starter.git
+```
+
+2. **Open the project in your IDE:** It is recommended to use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) or [Eclipse](https://www.eclipse.org/downloads/) to work on this project. Both are excellent integrated development environments (IDEs) that support Java.
