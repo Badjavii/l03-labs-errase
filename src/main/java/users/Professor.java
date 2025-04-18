@@ -2,8 +2,7 @@ package users;
 import abstractclasses.User;
 
 public class Professor extends User{
-    private String department;
-    private String specialty;
+    private String department, specialty;
 
     // Implementation of abstract methods of Materials.User class
     public int calculateLoanLimit(){

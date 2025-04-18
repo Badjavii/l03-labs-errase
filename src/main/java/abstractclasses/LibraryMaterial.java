@@ -1,7 +1,8 @@
 package abstractclasses;
+import interfaces.Comparable;
 
 // Definition of abstract class. In spanish its called "MaterialLibreria"
-public abstract class LibraryMaterial {
+public abstract class LibraryMaterial implements Comparable {
     private int id;
     private int year;
     private String title;
