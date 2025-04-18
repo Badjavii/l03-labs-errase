@@ -8,6 +8,14 @@ public abstract class LibraryMaterial implements Comparable {
     private String title;
     private boolean reserved;
 
+    // Constructor
+    public LibraryMaterial(int id, int year, String title, boolean reserved) {
+        this.id = id;
+        this.year = year;
+        this.title = title;
+        this.reserved = reserved;
+    }
+
     // Definition of abstract method. In spanish its called "calcularTiempoPrestamo"
     public abstract void calculateLoanTime();
 
@@ -15,7 +23,6 @@ public abstract class LibraryMaterial implements Comparable {
     public abstract void generateCatalogCode();
 
     // Definition Setters
-
     public void setId(int id) {
         this.id = id;
     }
@@ -33,7 +40,6 @@ public abstract class LibraryMaterial implements Comparable {
     }
 
     // Definition Getters
-
     public int getId() {
         return id;
     }

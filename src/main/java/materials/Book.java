@@ -1,7 +1,10 @@
 package materials;
 import abstractclasses.LibraryMaterial;
+import abstractclasses.User;
 import interfaces.Loanable;
 import interfaces.Catalogable;
+
+import java.time.LocalDate;
 
 // Definition of extended class. In spanish its called "Libro"
 public class Book extends LibraryMaterial implements Loanable, Catalogable {
@@ -12,7 +15,8 @@ public class Book extends LibraryMaterial implements Loanable, Catalogable {
     private String isbn;
 
     // Constructor
-    public Book(String author, String editor, String isbn) {
+    public Book(int id, int year, String title, boolean reserved, String author, String editor, String isbn) {
+        super(id, year, title, reserved);
         this.author = author;
         this.editor = editor;
         this.isbn = isbn;
@@ -55,25 +59,41 @@ public class Book extends LibraryMaterial implements Loanable, Catalogable {
 
     }
 
+    // Implementing Catalogable interface methods
+    @Override
+    public String generateBibliographicRecord() {
+        return "";
+    }
+
+    @Override
+    public void sortByCategory(String category) {
+
+    }
+
+    @Override
+    public void updateLocation(String location) {
+
+    }
+
     // Implementing Loanable interface methods
     @Override
-    public void lend() {
+    public void lend(User user, LocalDate loanDate) {
 
     }
 
     @Override
-    public void returnIt() {
+    public void returnIt(LocalDate returnDate) {
 
     }
 
     @Override
-    public boolean isLoan() {
+    public boolean isAvailable() {
         return false;
     }
 
-    // Implementing Catalogable interface methods
     @Override
-    public String getCatalogInfo() {
-        return "";
+    public double calculateFine(LocalDate returnDate) {
+        return 0;
     }
+
 }

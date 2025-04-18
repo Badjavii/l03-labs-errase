@@ -11,7 +11,8 @@ public class DigitalResources extends LibraryMaterial implements Catalogable{
     private int size;
 
     // Constructor
-    public DigitalResources(String url, String format, int size) {
+    public DigitalResources(int id, int year, String title, boolean reserved, String url, String format, int size) {
+        super(id, year, title, reserved);
         this.url = url;
         this.format = format;
         this.size = size;
@@ -56,8 +57,17 @@ public class DigitalResources extends LibraryMaterial implements Catalogable{
 
     // Implementing Catalogable interface methods
     @Override
-    public String getCatalogInfo() {
+    public String generateBibliographicRecord() {
         return "";
     }
 
+    @Override
+    public void sortByCategory(String category) {
+
+    }
+
+    @Override
+    public void updateLocation(String location) {
+
+    }
 }

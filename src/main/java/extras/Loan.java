@@ -1,12 +1,15 @@
-import extras.Date;
+package extras;
+import java.time.LocalDate;
+import abstractclasses.User;
 
 public class Loan {
     private int id;
-    private String user, borrowedMaterial, status;
-    private Date LoanDate, EstimatedReturnDate, ActualReturnDate;
+    private User user;
+    private String borrowedMaterial, status;
+    private LocalDate LoanDate, EstimatedReturnDate, ActualReturnDate;
 
     // Constructor
-    public Loan(int id, String user, String borrowedMaterial, String status, Date loanDate, Date estimatedReturnDate, Date actualReturnDate) {
+    public Loan(int id, User user, String borrowedMaterial, String status, LocalDate loanDate, LocalDate estimatedReturnDate, LocalDate actualReturnDate) {
         this.id = id;
         this.user = user;
         this.borrowedMaterial = borrowedMaterial;
@@ -21,7 +24,7 @@ public class Loan {
         return id;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
@@ -33,15 +36,15 @@ public class Loan {
         return status;
     }
 
-    public Date getLoanDate() {
+    public LocalDate getLoanDate() {
         return LoanDate;
     }
 
-    public Date getEstimatedReturnDate() {
+    public LocalDate getEstimatedReturnDate() {
         return EstimatedReturnDate;
     }
 
-    public Date getActualReturnDate() {
+    public LocalDate getActualReturnDate() {
         return ActualReturnDate;
     }
 
@@ -50,7 +53,7 @@ public class Loan {
         this.id = id;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -62,17 +65,16 @@ public class Loan {
         this.status = status;
     }
 
-    public void setLoanDate(Date loanDate) {
+    public void setLoanDate(LocalDate loanDate) {
         LoanDate = loanDate;
     }
 
-    public void setEstimatedReturnDate(Date estimatedReturnDate) {
+    public void setEstimatedReturnDate(LocalDate estimatedReturnDate) {
         EstimatedReturnDate = estimatedReturnDate;
     }
 
-    public void setActualReturnDate(Date actualReturnDate) {
+    public void setActualReturnDate(LocalDate actualReturnDate) {
         ActualReturnDate = actualReturnDate;
     }
-
 
 }

@@ -7,6 +7,14 @@ public abstract class User {
     private String mail;
     private boolean active;
 
+    // Constructor
+    public User(int id, String name, String mail, boolean active) {
+        this.id = id;
+        this.name = name;
+        this.mail = mail;
+        this.active = active;
+    }
+
     // Definition of abstract method. In spanish its called "calcularLimitePrestamos"
     public abstract int calculateLoanLimit();
 
@@ -14,7 +22,6 @@ public abstract class User {
     public abstract boolean canReserve();
 
     // Definition Setters
-
     public void setId(int id) {
         this.id = id;
     }
@@ -32,7 +39,6 @@ public abstract class User {
     }
 
     // Definition Getters
-
     public int getId() {
         return id;
     }
