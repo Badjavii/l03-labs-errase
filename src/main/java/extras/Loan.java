@@ -1,22 +1,26 @@
 package extras;
+
 import java.time.LocalDate;
 import abstractclasses.User;
+import abstractclasses.LibraryMaterial;
 
 public class Loan {
     private int id;
     private User user;
+    private LibraryMaterial material;
     private String borrowedMaterial, status;
     private LocalDate LoanDate, EstimatedReturnDate, ActualReturnDate;
 
     // Constructor
-    public Loan(int id, User user, String borrowedMaterial, String status, LocalDate loanDate, LocalDate estimatedReturnDate, LocalDate actualReturnDate) {
+    public Loan(int id, User user, LibraryMaterial material, String status) {
         this.id = id;
         this.user = user;
-        this.borrowedMaterial = borrowedMaterial;
+        this.material = material;
+        this.borrowedMaterial = material.getTitle(); // Se obtiene el título desde el material
         this.status = status;
-        LoanDate = loanDate;
-        EstimatedReturnDate = estimatedReturnDate;
-        ActualReturnDate = actualReturnDate;
+        this.LoanDate = LocalDate.now(); // Fecha del préstamo: hoy
+        this.EstimatedReturnDate = LoanDate.plusDays(7); // Fecha estimada: 7 días después
+        this.ActualReturnDate = null; // No hay fecha de devolución inicial (pendiente)
     }
 
     // Getters
@@ -26,6 +30,10 @@ public class Loan {
 
     public User getUser() {
         return user;
+    }
+
+    public LibraryMaterial getMaterial() {
+        return material;
     }
 
     public String getBorrowedMaterial() {
@@ -57,24 +65,16 @@ public class Loan {
         this.user = user;
     }
 
-    public void setBorrowedMaterial(String borrowedMaterial) {
-        this.borrowedMaterial = borrowedMaterial;
+    public void setMaterial(LibraryMaterial material) {
+        this.material = material;
+        this.borrowedMaterial = material.getTitle();
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public void setLoanDate(LocalDate loanDate) {
-        LoanDate = loanDate;
-    }
-
-    public void setEstimatedReturnDate(LocalDate estimatedReturnDate) {
-        EstimatedReturnDate = estimatedReturnDate;
-    }
-
     public void setActualReturnDate(LocalDate actualReturnDate) {
         ActualReturnDate = actualReturnDate;
     }
-
 }

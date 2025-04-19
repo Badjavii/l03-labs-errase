@@ -5,9 +5,31 @@ import java.util.Scanner;
  * @class ConsoleUtils
  * @brief Class that provides methods for manipulating the console.
  */
+
 public class ConsoleUtils {
 
-    private static Scanner scanner = new Scanner(System.in);
+    // Defining ANSI codes for colors
+    public static final String RESET = "\033[0m";
+    public static final String BLACK= "\033[30m";
+    public static final String RED = "\033[31m";
+    public static final String GREEN = "\033[32m";
+    public static final String YELLOW = "\033[33m";
+    public static final String BLUE = "\033[34m";
+    public static final String MAGENTA = "\033[35m";
+    public static final String CYAN = "\033[36m";
+    public static final String WHITE = "\033[37m";
+
+    /**
+     *
+     * Method to print colored text to the console.
+     * @param color ANSI color code.
+     * @param text Text to print.
+     */
+    public static void printlnf(String color, String text){
+        System.out.print(color + text + RESET);
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * Generic method for capturing and validating user input.
@@ -20,7 +42,7 @@ public class ConsoleUtils {
 
     public static <T> T scanv(T variable, String type){
         while (true){
-            System.out.print("» ");
+            printlnf(YELLOW, "» ");
             try {
                 String input = scanner.nextLine();
                 switch (type.toLowerCase()) {
@@ -41,16 +63,15 @@ public class ConsoleUtils {
                         variable = (T) Boolean.valueOf(input);
                         break;
                     default:
-                        System.out.println("Error: Unsupported data type.");
+                        printlnf(RED, "Error: Unsupported data type.");
                         return null;
                 }
                 return variable;
             } catch (Exception e){
-                System.out.println("Invalid input. Make sure you enter a valid " + type + ".");
+                printlnf(RED, "Invalid input. Make sure you enter a valid " + type + ".");
             }
         }
     }
-
 
     /**
      * @brief Pauses program execution until the user presses ENTER.
@@ -58,7 +79,7 @@ public class ConsoleUtils {
      */
     public static void pause_terminal() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Press [ENTER] to continue...");
+        printlnf(WHITE, "Press [ENTER] to continue...");
         input.nextLine();
     }
 
@@ -74,7 +95,7 @@ public class ConsoleUtils {
                 new ProcessBuilder("clear").inheritIO().start().waitFor();
             }
         } catch (Exception e) {
-            System.out.println("Cannot clean console");
+            printlnf(RED, "Cannot clean console");
         }
     }
 }
